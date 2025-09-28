@@ -1,22 +1,36 @@
-<!doctype html>
-<html lang="en">
+---
+import "../styles/global.css";
+---
+
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Dev Beer</title>
 	</head>
 	<body>
-		<slot />
+		<div>
+			<slot />
+		</div>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
+	@reference "../styles/global.css";
+
+	html {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	body {
+		@apply grid place-content-center p-20 bg-gray-800 text-white;
+	}
+
+	body > div {
+		@apply container;
 	}
 </style>
